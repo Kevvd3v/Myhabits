@@ -1,0 +1,149 @@
+/* Fondo tipo nubes con transición */
+.register-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Fondos dinámicos */
+.register-background.light-theme {
+  background-image: url('/assets/img/backgrounds/login-background-color.svg');
+}
+
+.register-background.dark-theme {
+  background-image: url('/assets/img/backgrounds/login-background-dark.svg');
+}
+
+/* Tarjeta flotante */
+.register-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.dark-theme .register-card {
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+}
+
+/* Logo animado */
+.register-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.register-logo {
+  max-width: 160px;
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Título y subtítulo */
+.register-message {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1b1b1b;
+}
+
+.dark-theme .register-message {
+  color: #f5f5f5;
+}
+
+.register-subtext {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.dark-theme .register-subtext {
+  color: #ccc;
+}
+
+/* Campos */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Botón registrarse */
+button[type="submit"] {
+  width: 100%;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+/* Botón modo claro/oscuro */
+.theme-toggle-wrapper {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.theme-toggle-button {
+  background-color: #e0e0e0;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 16px;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.light-theme .theme-toggle-button {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
+}
+
+/* Botón de volver dentro de la tarjeta */
+.back-to-login-wrapper {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5; /* Que esté encima pero no tape el logo */
+}
+
+.back-to-login-button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+}
+
+.back-to-login-button:hover {
+  transform: scale(1.2);
+}
+
+
+

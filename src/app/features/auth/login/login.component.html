@@ -1,0 +1,49 @@
+<div class="login-background" [ngClass]="themeClass">
+
+ <!-- Botón para cambiar de tema -->
+<div class="theme-toggle-wrapper">
+  <button class="theme-toggle-button" (click)="toggleTheme()" aria-label="Cambiar tema">
+    <mat-icon>{{ themeClass === 'dark-theme' ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
+</div>
+
+  <div class="login-card mat-elevation-z4">
+    <div class="login-logo-container">
+      <img [src]="logoSrc" alt="Logo MyHabits" class="login-logo" />
+    </div>
+
+    <h2 class="login-message">¡Comienza a construir tus hábitos!</h2>
+    <p class="login-subtext">Haz del crecimiento personal un hábito diario.</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="username" required />
+        <mat-error *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+          El usuario es requerido
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" required />
+        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          La contraseña es requerida
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit"
+       (click)="onSubmit()">
+       Iniciar sesión
+      </button>
+
+      <div class="navigation-link">
+        ¿Todavía no tienes una cuenta?
+        <a [routerLink]="['/register']">Regístrate</a>
+      </div>
+      
+    </form>
+  </div>
+</div>
+
+

@@ -1,0 +1,166 @@
+.login-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.login-background.light-theme {
+  background-image: url('/assets/img/backgrounds/login-background-color.svg');
+}
+
+.login-background.dark-theme {
+  background-image: url('/assets/img/backgrounds/login-background-dark.svg');
+}
+
+
+
+
+/* Tarjeta flotante */
+.login-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Tema oscuro para la tarjeta */
+.dark-theme .login-card {
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+}
+
+.login-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin: -60px;
+}
+
+.login-logo {
+  height: auto;
+  max-height: 400px;       
+  width: auto;
+  max-width: 300px;   
+  display: block;
+}
+/* Título */
+.login-message {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1b1b1b;
+}
+
+.dark-theme .login-message {
+  color: #f5f5f5;
+}
+
+.login-subtext {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.dark-theme .login-subtext {
+  color: #ccc;
+}
+
+/* Campos de formulario */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Botón iniciar sesión */
+button[type="submit"] {
+  width: 100%;
+  font-weight: bold;
+  border-radius: 12px;
+  color: #f2f2fc;
+  background-color: #23b659;
+}
+/* Modo oscuro: cambia a gris */
+.dark-theme .login-button {
+  background-color: #19181a; /* gris oscuro */
+  color: #23b659;
+}
+
+
+/* Posicionamiento fijo arriba a la derecha */
+.theme-toggle-wrapper {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+/* Botón cuadrado con animación y sombra */
+.theme-toggle-button {
+  background-color: #2b2b2b;
+  color: #23b659;
+  border: none;
+  border-radius: 16px;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* Modo claro */
+.light-theme .theme-toggle-button {
+  background-color: #23b659;
+  color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
+}
+
+mat-icon {
+  font-size: 24px;
+}
+.navigation-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.navigation-link a {
+  color: #1f7a8c;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  transition: text-decoration 0.3s;
+}
+
+.navigation-link a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo en modo oscuro */
+.dark-theme .navigation-link {
+  color: #ccc;
+}
+
+
+.dark-theme .navigation-link a {
+  color: #accefa;
+}
+
