@@ -1,0 +1,17 @@
+.upload-container {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="file"] {
+    margin-bottom: 1rem;
+  }
+  
+  .full-width {
+    width: 100%;
+    max-width: 800px;
+    overflow: auto;
+  }
+  

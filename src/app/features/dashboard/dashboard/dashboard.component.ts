@@ -48,6 +48,10 @@ import { PosixService, PosixRecord } from '../../../core/services/posix.service'
           <tr mat-row        *matRowDef="let row; columns: columns;"></tr>
         </table>
       </mat-card>
+      <button mat-raised-button color="primary" routerLink="/carga-datos">
+      Importar datos POSIX
+      </button>
+
 
       <button mat-stroked-button color="accent" (click)="logout()" class="logout-btn">
         Cerrar sesión
