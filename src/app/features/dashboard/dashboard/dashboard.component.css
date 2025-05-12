@@ -1,0 +1,33 @@
+.dashboard-card {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 900px;
+    text-align: center;
+  }
+  
+  .kpi {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  
+  .chart-container {
+    margin: 1.5rem 0;
+  }
+  
+  .full-width {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .data-card {
+    margin-top: 2rem;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
