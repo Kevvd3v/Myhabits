@@ -1,1 +1,62 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <h1>¡Bienvenido, {{ username }}!</h1>
+  
+    <mat-card class="data-card">
+      <h2>Mis hábitos</h2>
+  
+      <table mat-table [dataSource]="data" class="mat-elevation-z2 full-width">
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Hábito </th>
+          <td mat-cell       *matCellDef="let r"> {{ r.nombre }} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="producto">
+          <th mat-header-cell *matHeaderCellDef> Meta </th>
+          <td mat-cell       *matCellDef="let r"> {{ r.producto }} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="total_venta">
+          <th mat-header-cell *matHeaderCellDef> Progreso </th>
+          <td mat-cell       *matCellDef="let r"> {{ r.total_venta }}% </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row        *matRowDef="let row; columns: columns;"></tr>
+      </table>
+    </mat-card>
+  
+<!-- KPI -->
+<mat-card class="dashboard-card kpi">
+  <h3>{{ kpiText }}</h3>
+</mat-card>
+
+<!-- Gráfica de barras -->
+<mat-card class="dashboard-card">
+  <canvas
+    baseChart
+    [data]="barChartData"
+    [options]="barChartOptions"
+    [type]="barChartType">
+  </canvas>
+</mat-card>
+
+<!-- Gráfica de pastel -->
+<mat-card class="dashboard-card">
+  <canvas
+    baseChart
+    [data]="pieChartData"
+    [options]="pieChartOptions"
+    [type]="pieChartType">
+  </canvas>
+</mat-card>
+
+  
+    <button mat-raised-button color="primary" routerLink="/carga-datos">
+      Importar datos POSIX
+    </button>
+  
+    <button mat-stroked-button color="accent" (click)="logout()" class="logout-btn">
+      Cerrar sesión
+    </button>
+  </div>
+  
